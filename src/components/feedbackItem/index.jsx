@@ -2,9 +2,11 @@ import React from "react";
 import Card from "../shared/card";
 import { ReactComponent as CloseIcon } from "../../assests/icons/close.svg";
 import { ReactComponent as EditIcon } from "../../assests/icons/edit-item.svg";
+import { useContext } from "react";
+import FeedbackContext from "../../context/FeedbackContext";
 
-function FeedbackItem({ feedback, deleteFeedback, editFeedbackItem }) {
-  // const handleDelete = (id) => console.log(id);
+function FeedbackItem({ feedback }) {
+  const { editFeedbackItem, deleteFeedback } = useContext(FeedbackContext);
 
   return (
     <Card>

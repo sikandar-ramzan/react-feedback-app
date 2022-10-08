@@ -7,7 +7,8 @@ export const FeedbackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState([
     {
       id: 1,
-      text: "feedback from context",
+      text: `Feedback App created with ReactJS for UI, ContextAPI for state management, 
+      Framer motion for animations.`,
       rating: 9,
     },
   ]);
@@ -21,10 +22,11 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback([newFeedback, ...feedback]);
   };
 
-  const [editItem, setEditItem] = useState({
+  const initUpdateItem = {
     item: {},
     isEditModeOn: false,
-  });
+  };
+  const [editItem, setEditItem] = useState(initUpdateItem);
 
   const editFeedbackItem = (item) => {
     setEditItem({
@@ -37,6 +39,7 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback(
       feedback.map((item) => (item.id === id ? { ...item, ...newItem } : item))
     );
+    setEditItem(initUpdateItem);
   };
 
   return (

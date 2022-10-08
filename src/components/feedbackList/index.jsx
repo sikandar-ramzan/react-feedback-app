@@ -5,8 +5,7 @@ import { useContext } from "react";
 import FeedbackContext from "../../context/FeedbackContext";
 
 function FeedbackList() {
-  const { feedback, deleteFeedback, editFeedbackItem } =
-    useContext(FeedbackContext);
+  const { feedback } = useContext(FeedbackContext);
 
   if (!feedback || feedback.length === 0) {
     return <em>no feedback data</em>;
@@ -23,11 +22,7 @@ function FeedbackList() {
             exit={{ opacity: 0, scale: 0.4 }}
             transition={{ duration: 0.5 }}
           >
-            <FeedbackItem
-              feedback={item}
-              deleteFeedback={deleteFeedback}
-              editFeedbackItem={editFeedbackItem}
-            />
+            <FeedbackItem key={item.id} feedback={item} />
           </motion.div>
         ))}
       </AnimatePresence>
