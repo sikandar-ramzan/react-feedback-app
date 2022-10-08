@@ -8,7 +8,7 @@ export const FeedbackProvider = ({ children }) => {
     {
       id: 1,
       text: `Feedback App created with ReactJS for UI, ContextAPI for state management, 
-      Framer motion for animations.`,
+      Framer motion for animations and React-Router-DOM for routing.`,
       rating: 9,
     },
   ]);
